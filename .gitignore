@@ -1,0 +1,6 @@
+*.pdf
+a
+*.o
+*.out
+.DS_Store
+mergeit
