@@ -1,6 +1,6 @@
 # mergeit
 
-A fast, local PDF merging utility written in C++. An offline alternative to web services like ilovepdf.Less bloated and is accessible from the terminal
+A fast, local PDF merging utility written in C++. An offline alternative to web services like [ilovepdf](https://www.ilovepdf.com/) .This is Less bloated and is accessible from the terminal
 
 ## Dependencies
 
@@ -8,7 +8,7 @@ Install the QPDF development library for your operating system.
 
 ### macOS
 ```bash
-brew install qpdf pkg-config
+brew install qpdf 
 ```
 
 ### Arch Linux
@@ -23,7 +23,7 @@ sudo apt update && sudo apt install libqpdf-dev pkg-config
 
 ## Compilation and Execution
 
-Set up the repository with the following structure:
+The repository consists of the following structure:
 ```plaintext
 Merge-it/
 ├── contents/
@@ -31,30 +31,31 @@ Merge-it/
 │   └── file2.pdf
 └── src/
     └── MergeingEngine.cpp
+    └── Makefile
+    
 ```
 
 Navigate to the main project root directory (`Merge-it/`) in your terminal before running the compilation commands.
 
-### Intel (x86) macOS
-```bash
-g++ -std=c++17 src/MergeingEngine.cpp -I/usr/local/include -L/usr/local/lib -lqpdf -o mergeit
-./mergeit contents/file1.pdf contents/file2.pdf contents/out.pdf
+```
+cd src
+sudo make install
+#enter the password
 ```
 
-### Apple Silicon (ARM) macOS
-```bash
-g++ -std=c++17 src/MergeingEngine.cpp -I/opt/homebrew/include -L/opt/homebrew/lib -lqpdf -o mergeit
-./mergeit contents/file1.pdf contents/file2.pdf contents/out.pdf
-```
+## Usage
+Since `mergeit` is installed globally into your system's PATH, you can run it from any directory in your terminal.
 
-### Linux
+To merge multiple PDFs, pass the input files sequentially and specify your desired output filename as the **final** argument:
+
 ```bash
-g++ -std=c++17 src/MergeingEngine.cpp $(pkg-config --cflags --libs libqpdf 2>/dev/null || echo "-lqpdf") -o mergeit
-./mergeit contents/file1.pdf contents/file2.pdf contents/out.pdf
-```
+mergeit "file1.pdf" "file2.pdf" "file3.pdf" "file-n.pdf" #file-n is the nth file
+enclose the file name in double quotes if the filename has whitespace .
 
 ## TO-DO
 
-- [ ] Provide a Makefile for automated builds
+- [x] Provide a Makefile for automated builds
 - [ ] Handle file naming conflicts automatically
-- [ ] Support merging more than two PDFs sequentially
+- [x] Support merging more than two PDFs sequentially
+```
+You have reached the end ThankYou :)
