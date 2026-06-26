@@ -51,11 +51,11 @@ To merge multiple PDFs, pass the input files sequentially and specify your desir
 ```bash
 mergeit "file1.pdf" "file2.pdf" "file3.pdf" "file-n.pdf" #file-n is the nth file
 enclose the file name in double quotes if the filename has whitespace .
-
+```
 ## TO-DO
 
 - [x] Provide a Makefile for automated builds
 - [ ] Handle file naming conflicts automatically
 - [x] Support merging more than two PDFs sequentially
-```
+
 You have reached the end ThankYou :)
