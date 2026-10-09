@@ -47,7 +47,7 @@ sudo make install
 Since `mergeit` is installed globally into your system's PATH, you can run it from any directory in your terminal.
 
 To merge multiple PDFs, pass the input files sequentially and specify your desired output filename as the **final** argument:
-
+It is recommended to have a pdf file created `touch <filename.pdf>` and use the created pdf as a place Holder for the output pdf
 ```bash
 mergeit "file1.pdf" "file2.pdf" "file3.pdf" "file-n.pdf" #file-n is the nth file
 enclose the file name in double quotes if the filename has whitespace .
